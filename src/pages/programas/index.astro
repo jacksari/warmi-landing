@@ -1,5 +1,4 @@
 ---
-import type { IGetStaticPathsCourses } from "../../interfaces/programs";
 import Layout from "../../layouts/Layout.astro";
 import landingService from "../../services/landingService";
 
@@ -7,7 +6,7 @@ const data = await landingService.getPrograms();
 ---
 
 <Layout title="Programas">
-  <main>
+  <main class="p-10 pt-20">
     <h1 class="bg-primary-500">Hola programas</h1>
     <!-- <FormLanding client:load/> -->
     {
