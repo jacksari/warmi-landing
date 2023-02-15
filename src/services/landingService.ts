@@ -1,4 +1,4 @@
-import { IGetStaticPathsCourses } from "../interfaces/programs";
+import type { IGetStaticPathsCourses } from "../interfaces/programs";
 
 const url = "https://api.warmiventures.com/public/api/landing";
 class landingService {
