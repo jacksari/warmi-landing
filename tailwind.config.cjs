@@ -190,7 +190,31 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
     },
+    minHeight: {
+      screen: "100vh",
+      "screen-1/2": "50vh",
+      "screen-2/3": "66vh",
+    },
+    fontSize: {
+      sm: '0.8rem',
+      base: '1rem',
+      xl: '1.25rem',
+      '2xl': '1.563rem',
+      '3xl': '1.953rem',
+      '4xl': '2.441rem',
+      '5xl': '3.052rem',
+    },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents, theme }) {
+      addComponents({
+        ".btn": {
+          padding: theme("spacing.4"),
+          margin: "auto",
+          background: "red",
+        },
+      });
+    },
+  ],
 };

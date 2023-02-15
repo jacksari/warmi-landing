@@ -1,0 +1,25 @@
+---
+import BtnPrimary from '../components/astro/ui/BtnPrimary.vue';
+import LinkPrimary from '../components/astro/ui/LinkPrimary.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Página no encontrada">
+	<main class="pt-20 min-h-screen-2/3 flex items-center justify-center flex-col">
+		<h1 class="text-primary-500 font-medium text-4xl">Página no encontrada</h1>
+
+        <div class="mt-10">
+            <!-- <BtnPrimary client:load/> -->
+            <LinkPrimary
+             
+                title="Regresar"
+                url="/"
+            />
+          </div>
+		
+	</main>
+</Layout>
+
+<style>
+
+</style>
