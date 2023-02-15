@@ -1,0 +1,32 @@
+---
+import type { IGetStaticPathsCourses } from "../../interfaces/programs";
+import landingService from "../../services/landingService";
+
+export async function getStaticPaths() {
+  const data = await landingService.getPrograms();
+
+  return data.map(({ slug, title }) => {
+    return {
+      params: { slug },
+      props: { title },
+    };
+  });
+}
+
+const { title } = Astro.props;
+// console.log("ADD", title);
+---
+
+<html>
+  <head>
+    <title>{title}</title>
+  </head>
+  <body>
+    <h1>{title}</h1>
+    <!-- <p>{text}</p> -->
+
+    <div>
+      <a href="/programas">Return</a>
+    </div>
+  </body>
+</html>
