@@ -1,0 +1,14 @@
+---
+export interface Props {
+	title?: string,
+	body?: string,
+    srcimg?: string
+}
+const {title,body,srcimg}=Astro.props;
+---
+
+<article class="p-8 mx-auto">
+    <img class="p-4" src={srcimg} alt="">
+    <h3 class="font-bold text-xl">{title}</h3>
+    <p>{body}</p>
+</article>
