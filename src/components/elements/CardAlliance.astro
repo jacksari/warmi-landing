@@ -1,0 +1,10 @@
+---
+export interface Props {
+    srcimg?: string
+}
+const {srcimg}=Astro.props;
+---
+
+<article class="p-4">
+    <img class="shadow-xl shadow-gray-250/50" src={srcimg} alt="">
+</article>

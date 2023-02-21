@@ -1,16 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import FormLanding from '../components/vue/FormLanding.vue';
+import HomeSection from '../components/astro/home/HeaderHome.astro';
+import AllianceSection from '../components/astro/home/AlliancesHome.astro';
+import BenefitSection from '../components/astro/home/BenefitsHome.astro';
+import FormSection from '../components/astro/home/FormHome.astro';
+import JoinUsSection from '../components/astro/home/JoinUsHome.astro';
+import ProgramSection from '../components/astro/home/ProgramasFeatureHome.astro';
+import StatisticSection from '../components/astro/home/StatisticsHome.astro';
+import TestimonialSection from '../components/astro/home/TestimonialsHome.astro';
 ---
-
-<Layout title="Welcome to Astro.">
-	<main class="pt-20">
-		<h1 class="bg-primary-500">Hola mundo</h1>
-		<FormLanding client:load/>
+<Layout title="Welcome to Astro.">	
+	<main class="pt-20 px-20 mx-auto">
+		<HomeSection/>
+		<BenefitSection/>
+		<StatisticSection/>
+		<ProgramSection/>
+		<TestimonialSection/>
+		<FormSection/>
+		<AllianceSection/>
+		<JoinUsSection/>
 	</main>
 </Layout>
-
-<style>
-
-</style>

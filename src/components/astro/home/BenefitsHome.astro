@@ -1,0 +1,15 @@
+---
+import Card from "../../elements/CardBenefits.astro";
+
+const card={
+	title:'Title',
+	body:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit perspiciatis numquam illo debitis ipsa facilis, excepturi non, nostrum autem perferendis recusandae tempore eaque doloremque, voluptatibus odit distinctio esse deleniti placeat!'
+};
+---
+<h2 class="font-bold text-2xl py-10">Qué beneficios ofrezco o voy a obtener</h2>
+<section class="grid grid-cols-2">
+    <Card title={card.title} body={card.body} />
+    <Card title={card.title} body={card.body} />
+    <Card title={card.title} body={card.body} />
+    <Card title={card.title} body={card.body} />
+</section>
