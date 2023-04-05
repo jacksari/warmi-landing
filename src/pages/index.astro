@@ -2,11 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import FormLanding from '../components/vue/FormLanding.vue';
+import HeaderHome from '../components/astro/home/HeaderHome.astro';
+import StatisticsHome from '../components/astro/home/StatisticsHome.astro';
+import WhyByPart from '../components/astro/home/WhyByPart.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="pt-20">
-		<h1 class="bg-primary-500">Hola mundo</h1>
+	<main class="pt-20 bg-primary-500" >
+		<HeaderHome/>
+
+		<StatisticsHome/>
+
+		<WhyByPart/>
+		
 		<FormLanding client:load/>
 	</main>
 </Layout>

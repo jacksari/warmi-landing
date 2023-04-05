@@ -1,0 +1,109 @@
+<div
+  class="py-4 w-full mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between"
+>
+  <div class="grid grid-cols-2">
+    <div class="flex items-start justify-center flex-col">
+      <h1 class="text-7xl font-bold leading-tight">
+        Potenciamos emprendedoras latinoamericanas
+      </h1>
+      <h3 class="text-2xl text-gray-500 font-light mt-6 mb-10">
+        Incubadora digital de negocio que capitaliza el talento femenino en
+        LATAM y el mundo.
+      </h3>
+
+      <div>
+        <a
+          class="text-black font-medium border-2 border-black rounded-md px-3 py-3 bg-secondary-500"
+          href="/"
+          >Conocé nuestros programas
+        </a>
+      </div>
+    </div>
+
+    <div class="header-images">
+      <div class="header-images-top">
+        <img
+          class=""
+          src="https://fotografias-neox.atresmedia.com/clipping/cmsimages01/2022/04/06/8FD6CBA8-4776-43D3-B550-870DECBDFEEB/one-piece_98.jpg?crop=1920,1080,x0,y0&width=1900&height=1069&optimize=high&format=webply"
+          alt=""
+        />
+      </div>
+      <div class="header-images-center">
+        <img
+          class=""
+          src="https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/2239c7b46b2e491ae33b33ff980e9fb1.jpe"
+          alt=""
+        />
+      </div>
+      <div class="header-images-bottom">
+        <img
+          class=""
+          src="https://elcomercio.pe/resizer/MZm1GClLMlJooyCFjEwLgLivrzg=/980x528/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/PXUBL4ABJZE53LLNKSHUMTUOC4.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style scoped lang="scss">
+  .header-images {
+    position: relative;
+    min-height: 600px;
+
+    .header-images-top {
+      height: 140px;
+      width: 150px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      background: #fff;
+      padding: .6rem;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 12px;
+      }
+    }
+    .header-images-center {
+      height: 500px;
+      width: 450px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: .6rem;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 40px;
+      }
+    }
+    .header-images-bottom {
+      height: 180px;
+      width: 260px;
+      object-fit: cover;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+
+      background: #fff;
+      padding: .6rem;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        
+        border-radius: 12px;
+      }
+    }
+  }
+</style>
