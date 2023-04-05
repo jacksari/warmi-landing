@@ -5,6 +5,11 @@ import FormLanding from '../components/vue/FormLanding.vue';
 import HeaderHome from '../components/astro/home/HeaderHome.astro';
 import StatisticsHome from '../components/astro/home/StatisticsHome.astro';
 import WhyByPart from '../components/astro/home/WhyByPart.astro';
+import FormHome from '../components/astro/home/FormHome.astro';
+import TestimonialsHome from '../components/astro/home/TestimonialsHome.astro';
+import AlliancesHome from '../components/astro/home/AlliancesHome.astro';
+import AboutUs from '../components/astro/home/AboutUs.astro';
+import ProgramasFeatureHome from '../components/astro/home/ProgramasFeatureHome.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -14,8 +19,17 @@ import WhyByPart from '../components/astro/home/WhyByPart.astro';
 		<StatisticsHome/>
 
 		<WhyByPart/>
+
+		<ProgramasFeatureHome/>
+
+		<FormHome/>
+
+		<TestimonialsHome/>
+
+		<AlliancesHome/>
+
+		<AboutUs/>
 		
-		<FormLanding client:load/>
 	</main>
 </Layout>
 

@@ -1,6 +1,6 @@
-<div class="py-10 w-full mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+<div class="py-20 w-full mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
   <div
-    class="flex justify-between items-center w-full border-gray-500 border-b-2 pb-4"
+    class="flex justify-between items-center w-full border-gray-500 pb-4 header"
   >
     <h2 class="text-5xl font-semibold">¿Porqué ser parte?</h2>
 
@@ -11,24 +11,16 @@
     />
   </div>
 
-  <div class="grid grid-cols-2 gap-8 w-full">
+  <div class="grid grid-cols-2 gap-12 w-full mt-8">
     <div>
-      <div class="mt-8">
+      <div class="mb-8">
         <h6 class="text-2xl font-bold text-black">Acompañamiento</h6>
         <p class="font-normal text-gray-800 text-md mt-2">
           Tenemos un equipo disponible que te ayuda a resolver tus dudas y
           solicitar ayuda en cualquier momento de tu experiencia.
         </p>
       </div>
-      <div class="mt-8">
-        <h6 class="text-2xl font-bold text-black">Acompañamiento</h6>
-        <p class="font-normal text-gray-800 text-md mt-2">
-          Tenemos un equipo disponible que te ayuda a resolver tus dudas y
-          solicitar ayuda en cualquier momento de tu experiencia.
-        </p>
-      </div>
-
-      <div class="mt-8">
+      <div class="mb-8">
         <h6 class="text-2xl font-bold text-black">Acompañamiento</h6>
         <p class="font-normal text-gray-800 text-md mt-2">
           Tenemos un equipo disponible que te ayuda a resolver tus dudas y
@@ -36,7 +28,15 @@
         </p>
       </div>
 
-      <div class="mt-8">
+      <div class="mb-8">
+        <h6 class="text-2xl font-bold text-black">Acompañamiento</h6>
+        <p class="font-normal text-gray-800 text-md mt-2">
+          Tenemos un equipo disponible que te ayuda a resolver tus dudas y
+          solicitar ayuda en cualquier momento de tu experiencia.
+        </p>
+      </div>
+
+      <div class="mb-8">
         <h6 class="text-2xl font-bold text-black">Acompañamiento</h6>
         <p class="font-normal text-gray-800 text-md mt-2">
           Tenemos un equipo disponible que te ayuda a resolver tus dudas y
@@ -44,5 +44,67 @@
         </p>
       </div>
     </div>
+    <div class="container-images">
+      <div class="header-images-center">
+        <img
+          class=""
+          src="https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/2239c7b46b2e491ae33b33ff980e9fb1.jpe"
+          alt=""
+        />
+      </div>
+      <div class="header-images-bottom">
+        <img
+          class=""
+          src="https://elcomercio.pe/resizer/MZm1GClLMlJooyCFjEwLgLivrzg=/980x528/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/PXUBL4ABJZE53LLNKSHUMTUOC4.png"
+          alt=""
+        />
+      </div>
+    </div>
   </div>
 </div>
+
+<style scoped lang="scss">
+    .header{
+        border-bottom: 1px solid !important;
+    }
+  .container-images {
+    position: relative;
+    min-height: 560px;
+    .header-images-center {
+      height: 400px;
+      width: 380px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #fff;
+      padding: 0.6rem;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 40px;
+      }
+    }
+    .header-images-bottom {
+      height: 320px;
+      width: 280px;
+      object-fit: cover;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+
+      background: #fff;
+      padding: 0.6rem;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+
+        border-radius: 12px;
+      }
+    }
+  }
+</style>
