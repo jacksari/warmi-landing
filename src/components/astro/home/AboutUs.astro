@@ -1,23 +1,15 @@
 ---
 import { Icon } from "astro-icon";
+
+import HeaderSection from "../layout/HeaderSection.astro";
 ---
 
 <div class="py-20 w-full mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-  <div
-    class="flex justify-between items-center w-full border-gray-500 pb-4 header"
-  >
-    <h2 class="text-5xl font-semibold">Sobre nosotros</h2>
+  <HeaderSection title="Sobre nosotros" />
 
-    <img
-      class="h-20 w-20"
-      src="https://images.vexels.com/media/users/3/188383/isolated/preview/441ae65c263ed326999f19e452b4f044-icono-de-adorno-de-arbol-de-estrella-de-navidad.png"
-      alt=""
-    />
-  </div>
-
-  <div class="grid grid-cols-2 gap-12 w-full mt-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full mt-12">
     <div class="col-span-1">
-      <p class="text-gray-400 mr-32 text-md">
+      <p class="text-gray-400 mr-0 md:mr-32 text-md">
         Warmi nació  a mitad del 2020 con la finalidad de promover la inclusión
         de más mujeres en el ecosistema de emprendimiento e innovación y
         startups. Jaime, Giovana y Katya llevaron un curso sobre gestión de
@@ -33,7 +25,7 @@ import { Icon } from "astro-icon";
       </p>
     </div>
     <div class="col-span-1">
-      <div class="grid grid-cols-2 gap-6">
+      <div class="grid grid-cols-2 gap-3 md:gap-6">
         <div class="flex items-center">
           <div class="container-card-person">
             <div class="card-person">
@@ -43,11 +35,13 @@ import { Icon } from "astro-icon";
               />
               <div class="footer">
                 <div class="flex items-center justify-between name">
-                  <h5 class="text-xl font-bold">Jaime Fernandez</h5>
+                  <h5 class="text-base md:text-xl font-bold leading-5">
+                    Jaime Fernandez
+                  </h5>
 
                   <Icon name="mdi:linkedin" />
                 </div>
-                <p class="text-sm title">
+                <p class="text-xs md:text-sm title text-center md:text-left">
                   Director de operaciones y Coordinador académico
                 </p>
               </div>
@@ -63,17 +57,19 @@ import { Icon } from "astro-icon";
               />
               <div class="footer footer2">
                 <div class="flex items-center justify-between name">
-                  <h5 class="text-xl font-bold">Jaime Fernandez</h5>
+                  <h5 class="text-base md:text-xl font-bold leading-5">
+                    Jaime Fernandez
+                  </h5>
 
                   <Icon name="mdi:linkedin" />
                 </div>
-                <p class="text-sm title">
+                <p class="text-xs md:text-sm title text-center md:text-left">
                   Director de operaciones y Coordinador académico
                 </p>
               </div>
             </div>
           </div>
-          <div class="container-card-person mt-6">
+          <div class="container-card-person mt-3 md:mt-6">
             <div class="card-person">
               <img
                 class="image-person"
@@ -81,11 +77,13 @@ import { Icon } from "astro-icon";
               />
               <div class="footer footer3">
                 <div class="flex items-center justify-between name">
-                  <h5 class="text-xl font-bold">Jaime Fernandez</h5>
+                  <h5 class="text-base md:text-xl font-bold leading-5">
+                    Jaime Fernandez
+                  </h5>
 
                   <Icon name="mdi:linkedin" />
                 </div>
-                <p class="text-sm title">
+                <p class="text-xs md:text-sm title text-center md:text-left">
                   Director de operaciones y Coordinador académico
                 </p>
               </div>
@@ -102,19 +100,28 @@ import { Icon } from "astro-icon";
     border-bottom: 1px solid !important;
   }
   .container-card-person {
-    padding: 0.6rem;
+    padding: 0.3rem;
     background: #fff;
+    @media screen and (min-width: 1000px) {
+      padding: 0.6rem;
+    }
   }
   .card-person {
     border-radius: 12px;
     overflow: hidden;
     .image-person {
-      height: 240px;
+      height: 180px;
       object-fit: cover;
+      @media screen and (min-width: 1000px) {
+        height: 240px;
+      }
     }
     .footer {
       background: #d5fcf2;
-      padding: 1rem;
+      padding: 0.5rem;
+      @media screen and (min-width: 1000px) {
+        padding: 1rem;
+      }
       .name {
         border-bottom: 1px solid #232039;
         padding-bottom: 0.4rem;

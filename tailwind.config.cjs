@@ -197,6 +197,7 @@ module.exports = {
       "screen-2/3": "66vh",
     },
     fontSize: {
+      xs: '.7rem',
       sm: '0.8rem',
       base: '1rem',
       md: '18px',
