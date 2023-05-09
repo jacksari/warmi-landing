@@ -1,5 +1,7 @@
 ---
 import HeaderSection from "../layout/HeaderSection.astro"
+import why1 from "../../../assets/images/why1.png";
+import why2 from "../../../assets/images/why2.png";
 ---
 <div class="py-20 w-full mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
   <HeaderSection title="¿Porqué ser parte?"/>
@@ -18,14 +20,14 @@ import HeaderSection from "../layout/HeaderSection.astro"
       <div class="header-images-center">
         <img
           class=""
-          src="https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/2239c7b46b2e491ae33b33ff980e9fb1.jpe"
+          src={why1}
           alt=""
         />
       </div>
       <div class="header-images-bottom">
         <img
           class=""
-          src="https://elcomercio.pe/resizer/MZm1GClLMlJooyCFjEwLgLivrzg=/980x528/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/PXUBL4ABJZE53LLNKSHUMTUOC4.png"
+          src={why2}
           alt=""
         />
       </div>
@@ -39,7 +41,7 @@ import HeaderSection from "../layout/HeaderSection.astro"
     }
   .container-images {
     position: relative;
-    min-height: 560px;
+    min-height: 500px;
     display: none;
     @media screen and (min-width: 800px) {
       display: inline;
@@ -61,8 +63,8 @@ import HeaderSection from "../layout/HeaderSection.astro"
       }
     }
     .header-images-bottom {
-      height: 320px;
-      width: 280px;
+      height: 240px;
+      width: 200px;
       object-fit: cover;
       position: absolute;
       bottom: 0;
