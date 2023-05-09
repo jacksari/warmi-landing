@@ -1,44 +1,14 @@
+---
+import HeaderSection from "../layout/HeaderSection.astro"
+---
 <div class="py-20 w-full mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-  <div
-    class="flex justify-between items-center w-full border-gray-500 pb-4 header"
-  >
-    <h2 class="text-5xl font-semibold">¿Porqué ser parte?</h2>
+  <HeaderSection title="¿Porqué ser parte?"/>
 
-    <img
-      class="h-20 w-20"
-      src="https://images.vexels.com/media/users/3/188383/isolated/preview/441ae65c263ed326999f19e452b4f044-icono-de-adorno-de-arbol-de-estrella-de-navidad.png"
-      alt=""
-    />
-  </div>
-
-  <div class="grid grid-cols-2 gap-12 w-full mt-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full mt-8">
     <div>
       <div class="mb-8">
-        <h6 class="text-2xl font-bold text-black">Acompañamiento</h6>
-        <p class="font-normal text-gray-800 text-md mt-2">
-          Tenemos un equipo disponible que te ayuda a resolver tus dudas y
-          solicitar ayuda en cualquier momento de tu experiencia.
-        </p>
-      </div>
-      <div class="mb-8">
-        <h6 class="text-2xl font-bold text-black">Acompañamiento</h6>
-        <p class="font-normal text-gray-800 text-md mt-2">
-          Tenemos un equipo disponible que te ayuda a resolver tus dudas y
-          solicitar ayuda en cualquier momento de tu experiencia.
-        </p>
-      </div>
-
-      <div class="mb-8">
-        <h6 class="text-2xl font-bold text-black">Acompañamiento</h6>
-        <p class="font-normal text-gray-800 text-md mt-2">
-          Tenemos un equipo disponible que te ayuda a resolver tus dudas y
-          solicitar ayuda en cualquier momento de tu experiencia.
-        </p>
-      </div>
-
-      <div class="mb-8">
-        <h6 class="text-2xl font-bold text-black">Acompañamiento</h6>
-        <p class="font-normal text-gray-800 text-md mt-2">
+        <h6 class="text-2xl font-bold text-black text-center md:text-left">Acompañamiento</h6>
+        <p class="font-normal text-gray-800 text-md mt-2 text-center md:text-left">
           Tenemos un equipo disponible que te ayuda a resolver tus dudas y
           solicitar ayuda en cualquier momento de tu experiencia.
         </p>
@@ -70,6 +40,10 @@
   .container-images {
     position: relative;
     min-height: 560px;
+    display: none;
+    @media screen and (min-width: 800px) {
+      display: inline;
+    }
     .header-images-center {
       height: 400px;
       width: 380px;

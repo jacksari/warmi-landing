@@ -1,12 +1,12 @@
 <div
   class="py-4 w-full mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between"
 >
-  <div class="grid grid-cols-2 gap-12">
-    <div class="flex items-start justify-center flex-col">
-      <h1 class="text-7xl font-bold leading-tight">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 md:mt-4">
+    <div class="flex items-center md:items-start justify-center flex-col">
+      <h1 class="text-4xl md:text-7xl font-bold leading-tight text-center md:text-left">
         Potenciamos emprendedoras latinoamericanas
       </h1>
-      <h3 class="text-2xl text-gray-500 font-light mt-6 mb-10">
+      <h3 class="text-md md:text-2xl text-gray-500 font-light mt-6 mb-10 text-center md:text-left">
         Incubadora digital de negocio que capitaliza el talento femenino en
         LATAM y el mundo.
       </h3>
@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div class="header-images">
+    <div class="header-images flex-none">
       <div class="header-images-top">
         <img
           class=""
@@ -48,8 +48,13 @@
 
 <style scoped lang="scss">
   .header-images {
+    display: none;
     position: relative;
     min-height: 600px;
+
+    @media screen and (min-width: 1000px) {
+      display: inline;
+    }
 
     .header-images-top {
       height: 140px;
@@ -59,7 +64,7 @@
       right: 0;
       z-index: 10;
       background: #fff;
-      padding: .6rem;
+      padding: 0.6rem;
       box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
       img {
         object-fit: cover;
@@ -76,7 +81,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background: #fff;
-      padding: .6rem;
+      padding: 0.6rem;
       box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
       img {
         object-fit: cover;
@@ -95,13 +100,13 @@
       z-index: 10;
 
       background: #fff;
-      padding: .6rem;
+      padding: 0.6rem;
       box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
       img {
         object-fit: cover;
         height: 100%;
         width: 100%;
-        
+
         border-radius: 12px;
       }
     }
