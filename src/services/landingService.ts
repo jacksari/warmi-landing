@@ -1,6 +1,6 @@
 import type { IGetStaticPathsCourses } from "../interfaces/programs";
 
-const url = "https://api.warmiventures.com/public/api/landing";
+const url = "http://localhost:8000/api";
 class landingService {
   async getPrograms() {
     try {
@@ -19,7 +19,7 @@ class landingService {
 
   async getDataLanding() {
     try {
-      const response = await fetch(`${url}/`);
+      const response = await fetch(`${url}`);
       const data = await response.json();
       return data;
     } catch (err) {

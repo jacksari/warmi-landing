@@ -1,38 +1,46 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import FormLanding from '../components/vue/FormLanding.vue';
-import HeaderHome from '../components/astro/home/HeaderHome.astro';
-import StatisticsHome from '../components/astro/home/StatisticsHome.astro';
-import WhyByPart from '../components/astro/home/WhyByPart.astro';
-import FormHome from '../components/astro/home/FormHome.astro';
-import TestimonialsHome from '../components/astro/home/TestimonialsHome.astro';
-import AlliancesHome from '../components/astro/home/AlliancesHome.astro';
-import AboutUs from '../components/astro/home/AboutUs.astro';
-import ProgramasFeatureHome from '../components/astro/home/ProgramasFeatureHome.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import FormLanding from "../components/vue/FormLanding.vue";
+import HeaderHome from "../components/astro/home/HeaderHome.astro";
+import WhyByPart, { IWhyBePart } from "../components/astro/home/WhyByPart.vue";
+import FormHome from "../components/astro/home/FormHome.astro";
+import TestimonialsHome, {
+  IReview,
+} from "../components/astro/home/TestimonialsHome.vue";
+import AlliancesHome, { IAllies } from "../components/astro/home/AlliancesHome.vue";
+import AboutUs from "../components/astro/home/AboutUs.astro";
+import ProgramasFeatureHome from "../components/astro/home/ProgramasFeatureHome.astro";
+import landingService from "../services/landingService";
+import StatisticsHome, {
+  IStatistic,
+} from "../components/astro/home/StatisticsHome.vue";
+
+const { statistics, why_be_part, reviews, allies } =
+  await landingService.getDataLanding();
+
+// console.log('data', statistics );
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="pt-20 bg-primary-500" >
-		<HeaderHome/>
+  <main class="pt-20 bg-primary-500">
+    <HeaderHome />
 
-		<StatisticsHome/>
+    <StatisticsHome statistics={statistics as IStatistic[]} />
+    <!-- <FormLanding/> -->
 
-		<WhyByPart/>
+    <WhyByPart items={why_be_part as IWhyBePart[]} />
 
-		<ProgramasFeatureHome/>
+    <ProgramasFeatureHome />
 
-		<FormHome/>
+    <FormHome />
 
-		<TestimonialsHome/>
+    <TestimonialsHome reviews={reviews as IReview[]} />
 
-		<AlliancesHome/>
+    <AlliancesHome allies={allies as IAllies[]}/>
 
-		<AboutUs/>
-		
-	</main>
+    <AboutUs />
+  </main>
 </Layout>
 
-<style>
-
-</style>
+<style></style>

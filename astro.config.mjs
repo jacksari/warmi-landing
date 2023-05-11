@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
+// import image from '@astrojs/image';
 
 // https://astro.build/config
 import vue from "@astrojs/vue";
@@ -18,5 +19,6 @@ export default defineConfig({
         path: "./tailwind.config.cjs",
       },
     }),
+    // image()
   ],
 });
