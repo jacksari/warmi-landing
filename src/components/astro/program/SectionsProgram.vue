@@ -83,11 +83,11 @@ const sections = ref([
 </script>
 
 <template>
-  <div class="bg-primary-500 pt-24">
+  <div class="bg-primary-500 pt-0 lg:pt-24">
     <div
       class="py-20 w-full mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center"
     >
-      <h2 class="text-3xl text-center mt-20 font-medium">
+      <h2 class="text-3xl text-center mt-0 lg:mt-20 font-medium">
         Contenido del programa
       </h2>
 
@@ -98,7 +98,7 @@ const sections = ref([
           :key="index"
         >
           <div class="title-section" @click="section.active = !section.active">
-            <h4 class="font-bold">{{ section.title }}</h4>
+            <h4 class="font-bold text-left">{{ section.title }}</h4>
             <svg class="title-icon" :class="section.active ? 'active' : ''" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
               <path
                 d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z"
@@ -143,18 +143,27 @@ const sections = ref([
 
 <style scoped lang="scss">
 .item-section {
-  width: 50%;
+  width: 100%;
   border: 1px solid #333333;
   border-bottom: none;
   &:last-child {
     border-bottom: 1px solid #333333;
   }
 
+  @media screen and (min-width: 1024px) {
+    width: 50%;
+  }
+
   .title-section {
-    padding: 1rem;
+    padding: .5rem;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    @media screen and (min-width: 1024px) {
+    padding: 1rem;
+    h4{
+    }
+  }
     cursor: pointer;
     .title-icon{
         transition: .4s all ease-in-out;

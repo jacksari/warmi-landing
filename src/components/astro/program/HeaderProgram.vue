@@ -35,7 +35,7 @@ const data = [
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 w-full mt-12"
       >
-        <div class="col-span-2">
+        <div class="col-span-1 md:col-span-2">
           <span class="span-valid px-2 py-1 rounded-md">Valida tu idea</span>
           <h1 class="text-5xl">Preincubación</h1>
         </div>
@@ -55,7 +55,7 @@ const data = [
             establecer su startup y lanzarla al mercado.
           </p>
 
-          <div class="mt-10">
+          <div class="mt-10 flex flex-col items-center md:items-start">
             <a
               class="text-black font-medium border-2 border-black rounded-md px-14 py-3 bg-white"
               href="/"
@@ -74,9 +74,13 @@ const data = [
       </div>
     </div>
 
-    <div class="w-full mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 container-footer mt-24">
-      <div class="grid grid-cols-1 md:grid-cols-4 bg-white container-details">
-        <div class="p-10" v-for="(item, index) in data" :key="index">
+    <div
+      class="w-full mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 container-footer mt-0 lg:mt-24 pb-10"
+    >
+      <div
+        class="grid grid-cols-1 lg:grid-cols-4 bg-white container-details m-10 lg:m-0 mb-0 mt-0"
+      >
+        <div class="p-5 md:p-10" v-for="(item, index) in data" :key="index">
           <img class="h-12 w-12 object-cover" :src="item.img" alt="" />
           <h3 class="font-bold mt-2 mb-2">{{ item.title }}</h3>
           <p class="font-light text-base leading-5">{{ item.description }}</p>
@@ -99,11 +103,16 @@ const data = [
 .container-footer {
   position: relative;
   width: 100%;
-  height: 100px;
+  @media screen and (min-width: 1024px) {
+    height: 100px;
+  }
+
   .container-details {
-    position: absolute;
-    top: -50%;
-    left: 0;
+    @media screen and (min-width: 1024px) {
+      position: absolute;
+      top: -50%;
+      left: 0;
+    }
   }
 }
 </style>
