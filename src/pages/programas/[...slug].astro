@@ -1,28 +1,54 @@
 ---
+import FormHome from "../../components/astro/home/FormHome.astro";
+import TestimonialsHome, {
+  IReview,
+} from "../../components/astro/home/TestimonialsHome.vue";
+import HeaderProgram from "../../components/astro/program/HeaderProgram.vue";
+import SectionsProgram from "../../components/astro/program/SectionsProgram.vue";
 import Layout from "../../layouts/Layout.astro";
 import landingService from "../../services/landingService";
 
 export async function getStaticPaths() {
   const data = await landingService.getPrograms();
 
-  return data.map(({ slug, title }) => {
-    return {
-      params: { slug },
-      props: { title },
-    };
-  });
+  // return data.map(({ slug, title }) => {
+  //   return {
+  //     params: { slug },
+  //     props: { title },
+  //   };
+  // });
+  return [
+    {
+      params: {
+        slug: "mentoria-1",
+      },
+      props: {
+        title: "Mentoria-1",
+      },
+    },
+  ];
 }
 
 const { title } = Astro.props;
-// console.log("ADD", title);
+console.log("ADD", title);
+
+const { statistics, why_be_part, reviews, allies } =
+  await landingService.getDataLanding();
 ---
 
 <Layout title={`Programa | ${title}`}>
-  <main class="p-10 pt-20">
-    <h1 class="bg-primary-500"><h1>{title}</h1></h1>
-    <!-- <FormLanding client:load/> -->
-    <div>
-      <a href="/programas">Return</a>
+  <main class="">
+    <HeaderProgram />
+
+    <SectionsProgram client:load />
+
+    <TestimonialsHome reviews={reviews as IReview[]} />
+
+    <div class="bg-primary-500">
+
+      
+      <FormHome/>
+      
     </div>
   </main>
 </Layout>
