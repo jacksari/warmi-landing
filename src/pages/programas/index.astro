@@ -1,15 +1,23 @@
 ---
+import ProgramasFeatureHome, { ICourse } from "../../components/astro/home/ProgramasFeatureHome.vue";
 import Layout from "../../layouts/Layout.astro";
 import landingService from "../../services/landingService";
 
-const data = await landingService.getPrograms();
+const { statistics, why_be_part, reviews, allies, courses } =
+  await landingService.getDataLanding();
 ---
 
 <Layout title="Programas">
-  <main class="p-10 pt-20">
-    <h1 class="bg-primary-500">Hola programas</h1>
+  <main class="">
+
+    <ProgramasFeatureHome
+      courses={courses.map((it: any) => ({
+        ...it,
+        methodologies: JSON.parse(courses[0].methodologies),
+      })) as ICourse[]}
+    />
     <!-- <FormLanding client:load/> -->
-    {
+    <!-- {
       data.map((it) => {
         const link = `/programas/${it.slug}`;
         return (
@@ -18,7 +26,7 @@ const data = await landingService.getPrograms();
           </div>
         );
       })
-    }
+    } -->
   </main>
 </Layout>
 

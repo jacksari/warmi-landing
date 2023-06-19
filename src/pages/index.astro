@@ -4,22 +4,39 @@ import Card from "../components/Card.astro";
 import FormLanding from "../components/vue/FormLanding.vue";
 import HeaderHome from "../components/astro/home/HeaderHome.astro";
 import WhyByPart, { IWhyBePart } from "../components/astro/home/WhyByPart.vue";
-import FormHome from "../components/astro/home/FormHome.astro";
+import FormHome from "../components/astro/home/FormHome.vue";
 import TestimonialsHome, {
   IReview,
 } from "../components/astro/home/TestimonialsHome.vue";
-import AlliancesHome, { IAllies } from "../components/astro/home/AlliancesHome.vue";
+import AlliancesHome, {
+  IAllies,
+} from "../components/astro/home/AlliancesHome.vue";
 import AboutUs from "../components/astro/home/AboutUs.astro";
-import ProgramasFeatureHome from "../components/astro/home/ProgramasFeatureHome.astro";
+import ProgramasFeatureHome, {
+  ICourse,
+} from "../components/astro/home/ProgramasFeatureHome.vue";
 import landingService from "../services/landingService";
 import StatisticsHome, {
   IStatistic,
 } from "../components/astro/home/StatisticsHome.vue";
+import type { IGetStaticPathsCourses } from "../interfaces/programs";
 
-const { statistics, why_be_part, reviews, allies } =
+const { statistics, why_be_part, reviews, allies, courses } =
   await landingService.getDataLanding();
 
-// console.log('data', statistics );
+const courseHome: IGetStaticPathsCourses = {
+  slug: "",
+  title: "",
+  subtitle: "",
+  description: "",
+  objetive: "",
+  resume: "",
+  image: "",
+  methodologies: [],
+  sections: [],
+};
+
+// console.log("data", JSON.parse(courses[0].methodologies));
 ---
 
 <Layout title="Welcome to Astro.">
@@ -31,13 +48,18 @@ const { statistics, why_be_part, reviews, allies } =
 
     <WhyByPart items={why_be_part as IWhyBePart[]} />
 
-    <ProgramasFeatureHome />
+    <ProgramasFeatureHome
+      courses={courses.map((it: any) => ({
+        ...it,
+        methodologies: JSON.parse(courses[0].methodologies),
+      })) as ICourse[]}
+    />
 
-    <FormHome />
+    <FormHome client:load course={courseHome} />
 
     <TestimonialsHome reviews={reviews as IReview[]} />
 
-    <AlliancesHome allies={allies as IAllies[]}/>
+    <AlliancesHome allies={allies as IAllies[]} />
 
     <AboutUs />
   </main>

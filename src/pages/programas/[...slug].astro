@@ -1,51 +1,50 @@
 ---
-import FormHome from "../../components/astro/home/FormHome.astro";
+import FormHome from "../../components/astro/home/FormHome.vue";
 import TestimonialsHome, {
   IReview,
 } from "../../components/astro/home/TestimonialsHome.vue";
 import HeaderProgram from "../../components/astro/program/HeaderProgram.vue";
 import SectionsProgram from "../../components/astro/program/SectionsProgram.vue";
+import type { IGetStaticPathsCourses } from "../../interfaces/programs";
 import Layout from "../../layouts/Layout.astro";
 import landingService from "../../services/landingService";
 
 export async function getStaticPaths() {
   const data = await landingService.getPrograms();
 
-  // return data.map(({ slug, title }) => {
-  //   return {
-  //     params: { slug },
-  //     props: { title },
-  //   };
-  // });
-  return [
-    {
-      params: {
-        slug: "mentoria-1",
-      },
-      props: {
-        title: "Mentoria-1",
-      },
-    },
-  ];
+  const items: IGetStaticPathsCourses[] = data.data;
+
+  return items.map((it) => {
+    return {
+      params: { slug: it.slug },
+      props: it,
+    };
+  });
 }
 
-const { title } = Astro.props;
-console.log("ADD", title);
+const it = Astro.props;
+const course: IGetStaticPathsCourses = it as any;
+// console.log("ADD", title);
 
 const { statistics, why_be_part, reviews, allies } =
   await landingService.getDataLanding();
+
+const courseDetails: IGetStaticPathsCourses = {
+  ...course,
+  sections: course.sections.map((it) => ({ ...it, active: false })),
+};
 ---
 
-<Layout title={`Programa | ${title}`}>
+<Layout title={`Programa | ${course.title}`}>
   <main class="">
-    <HeaderProgram />
+    <HeaderProgram course={course} />
 
-    <SectionsProgram client:load />
+    <SectionsProgram client:load course={courseDetails} />
 
     <TestimonialsHome reviews={reviews as IReview[]} />
 
     <div class="bg-primary-500">
-      <FormHome />
+      <FormHome client:load course={course}/>
     </div>
   </main>
 </Layout>

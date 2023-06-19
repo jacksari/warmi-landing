@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { IGetStaticPathsCourses } from '../../../interfaces/programs';
+
 const data = [
   {
     img: "/images/p1.png",
@@ -25,6 +27,10 @@ const data = [
       "La posibilidad de presentar sus proyectos frente a la red de mentores, y público en general, al finalizar el programa.",
   },
 ];
+  interface Props {
+    course: IGetStaticPathsCourses;
+  }
+  const props = defineProps<Props>();
 </script>
 
 <template>
@@ -36,23 +42,15 @@ const data = [
         class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 w-full mt-12"
       >
         <div class="col-span-1 md:col-span-2">
-          <span class="span-valid px-2 py-1 rounded-md">Valida tu idea</span>
-          <h1 class="text-5xl">Preincubación</h1>
+          <span class="span-valid px-2 py-1 rounded-md">{{ props.course.subtitle }}</span>
+          <h1 class="text-5xl">{{ props.course.title }}</h1>
         </div>
         <div>
           <p class="font-light">
-            El Programa de pre-Incubación está dirigido a equipos liderados por
-            mujeres o que en su totalidad sean mujeres que tengan una idea de
-            negocio relacionado con startups o emprendimientos de alto impacto.
-            Se enfoca en capacitación, asesoría y mentoría de startups en edad
-            temprana y busca identificar y fomentar proyectos de alto impacto
-            con un fuerte enfoque en innovación, liderazgo, sostenibilidad y
-            tecnología.
+            {{ props.course.description }}
           </p>
           <p class="font-light mt-8">
-            El programa busca dar un soporte inicial a los emprendedores en el
-            desarrollo de sus ideas de negocio para que puedan llegar a
-            establecer su startup y lanzarla al mercado.
+            {{ props.course.objetive }}
           </p>
 
           <div class="mt-10 flex flex-col items-center md:items-start">
@@ -66,8 +64,8 @@ const data = [
 
         <div class="bg-white p-4">
           <img
-            class="p-0 m-0 w-full bg-cover"
-            src="/images/program.png"
+            class="p-0 m-0 w-full object-cover h-full"
+            :src="props.course.image"
             alt=""
           />
         </div>

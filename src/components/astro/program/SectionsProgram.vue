@@ -1,85 +1,25 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import type { IGetStaticPathsCourses } from "../../../interfaces/programs";
 
-const sections = ref([
-  {
-    title: "introducción al emprendimiento",
-    description:
-      "Introducir a los participantes en lo realmente necesario para entender el ecosistema de innovación y emprendimiento.",
-    lessons: [
-      "Conceptos claves del I&E",
-      "Test del emprendedor",
-      " Enfoque del equipo",
-      "Mindsets del emprendedor",
-    ],
-    active: false,
-  },
-  {
-    title: "Conociendo más sobre la problemática a resolver",
-    description: "Entender la forma de cómo plantear una problemática real.",
-    lessons: [
-      " Mitos y errores del emprendimiento",
-      " Técnica del árbol de problemas",
-      " Mapa de audiencia",
-      "Conceptos claves del I&E",
-      "Test del emprendedor",
-      " Enfoque del equipo",
-      "Mindsets del emprendedor",
-      "Conceptos claves del I&E",
-      "Test del emprendedor",
-      " Enfoque del equipo",
-      "Mindsets del emprendedor",
-    ],
-    active: false,
-  },
-  {
-    title: "Conociendo más sobre la problemática a resolver",
-    description: "Entender la forma de cómo plantear una problemática real.",
-    lessons: [
-      " Mitos y errores del emprendimiento",
-      " Técnica del árbol de problemas",
-      " Mapa de audiencia",
-      "Conceptos claves del I&E",
-      "Test del emprendedor",
-      " Enfoque del equipo",
-      "Mindsets del emprendedor",
-    ],
-    active: false,
-  },
-  {
-    title: "Conociendo más sobre la problemática a resolver",
-    description: "Entender la forma de cómo plantear una problemática real.",
-    lessons: [
-      " Mitos y errores del emprendimiento",
-      " Técnica del árbol de problemas",
-      " Mapa de audiencia",
-      "Conceptos claves del I&E",
-      "Test del emprendedor",
-      " Enfoque del equipo",
-      "Mindsets del emprendedor",
-      "Conceptos claves del I&E",
-      "Test del emprendedor",
-      " Enfoque del equipo",
-      "Mindsets del emprendedor",
-      "Conceptos claves del I&E",
-      "Test del emprendedor",
-    ],
-    active: false,
-  },
-  {
-    title: "Conociendo más sobre la problemática a resolver",
-    description: "Entender la forma de cómo plantear una problemática real.",
-    lessons: [
-      " Mitos y errores del emprendimiento",
-      " Técnica del árbol de problemas",
-      " Mapa de audiencia",
-      "Conceptos claves del I&E",
-      "Test del emprendedor",
-      " Enfoque del equipo",
-    ],
-    active: false,
-  },
-]);
+interface ISections {
+  name: string,
+  description: string,
+  lessons: string[],
+  active: boolean
+}
+
+const sections = ref<ISections[]>([]);
+
+interface Props {
+    course: IGetStaticPathsCourses;
+  }
+  const props = defineProps<Props>();
+  
+  onMounted(() => {
+    sections.value = props.course.sections as any;
+  })
+
 </script>
 
 <template>
@@ -98,7 +38,7 @@ const sections = ref([
           :key="index"
         >
           <div class="title-section" @click="section.active = !section.active">
-            <h4 class="font-bold text-left">{{ section.title }}</h4>
+            <h4 class="font-bold text-left">{{ section.name }}</h4>
             <svg class="title-icon" :class="section.active ? 'active' : ''" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
               <path
                 d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z"

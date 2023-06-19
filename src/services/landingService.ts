@@ -1,13 +1,17 @@
-import type { IGetStaticPathsCourses } from "../interfaces/programs";
 
-const url = "http://localhost:8000/api";
+import type {
+  IFormLanding,
+  IGetStaticPathsCourses,
+} from "../interfaces/programs";
+
+// const url = "http://localhost:8000/api";
+
+const url = "https://api.warmiventures.com/public/api";
 class landingService {
   async getPrograms() {
     try {
-      const response = await fetch(
-        `https://api.warmiventures.com/public/api/courses`
-      );
-      const data: IGetStaticPathsCourses[] = await response.json();
+      const response = await fetch(`${url}/courses`);
+      const data = await response.json();
       return data;
     } catch (err) {
       //   if (request.isAxiosError(err) && err.response) {
@@ -82,6 +86,23 @@ class landingService {
     }
   }
 
-  //
+  async insertForm(body: IFormLanding) {
+    try {
+      const response = await fetch(`${url}/insert-lading`, {
+        body: JSON.stringify(body),
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json", // Si estás enviando datos en formato JSON
+        },
+      });
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      //   if (request.isAxiosError(err) && err.response) {
+      //     return err.response?.data as TodoErrorResponse;
+      //   }
+      return [];
+    }
+  }
 }
 export default new landingService();
