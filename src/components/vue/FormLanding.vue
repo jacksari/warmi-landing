@@ -27,9 +27,9 @@ const saveForm = async () => {
   form.value.course = props.course.title;
 
   if (
-    form.value.email == "" &&
-    form.value.name == "" &&
-    form.value.message == "" &&
+    form.value.email == "" ||
+    form.value.name == "" ||
+    form.value.message == "" ||
     form.value.type == ""
   ) {
     errors.value = true;
